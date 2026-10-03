@@ -135,6 +135,49 @@ section h2 { font: 400 clamp(1.6rem, 4.4vw, 2.4rem)/1.1 var(--display); text-tra
 .soon .hero .wrap { width: 100%; }
 h1, h2, h3 { overflow-wrap: break-word; }
 
+/* Shop: product grid */
+.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
+.product { background: #fffbe8; border: 2px solid var(--aubergine); border-radius: 14px; overflow: hidden; box-shadow: 5px 5px 0 var(--aubergine); display: flex; flex-direction: column; color: var(--aubergine); text-decoration: none; }
+a.product:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--aubergine); color: var(--aubergine); }
+.product img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-bottom: 2px solid var(--aubergine); }
+.product .body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.product h3 { font: 400 1.3rem/1.15 var(--display); text-transform: uppercase; margin: 0; }
+.product p { margin: 0; font-size: 0.97rem; }
+.price { font: 600 1.05rem/1 var(--utility); letter-spacing: 0.14em; text-transform: uppercase; color: var(--red-earth); margin-top: auto; padding-top: 8px; }
+.price.free { color: var(--sedge); }
+.product.soon { opacity: 0.72; box-shadow: none; border-style: dashed; }
+.product.soon .ph { aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; background: var(--peach); border-bottom: 2px dashed var(--aubergine); font: 600 1rem/1 var(--utility); letter-spacing: 0.2em; text-transform: uppercase; color: var(--oxblood); }
+
+/* Shop: product page */
+.product-hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 40px; align-items: center; padding: 48px 20px 56px; }
+.product-hero img { border-radius: 14px; border: 2px solid var(--aubergine); box-shadow: 6px 6px 0 var(--aubergine); }
+.product-hero h1 { font: 400 clamp(2rem, 5.5vw, 3.2rem)/1.02 var(--display); text-transform: uppercase; margin: 0 0 10px; }
+.stats { font: 600 1.05rem/1.4 var(--utility); letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin: 0 0 16px; }
+.product-hero .buttons { justify-content: flex-start; margin-top: 22px; }
+.fine { font-size: 0.88rem; color: var(--mudflat); margin-top: 14px; }
+@media (max-width: 760px) { .product-hero { grid-template-columns: 1fr; gap: 26px; padding-top: 28px; } }
+
+.callout { background: var(--peach); border: 2px solid var(--aubergine); border-radius: 14px; padding: 22px 24px; }
+.callout h3 { font: 600 1.3rem/1.2 var(--utility); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 6px; color: var(--oxblood); }
+.callout p { margin: 0 0 8px; }
+.callout p:last-child { margin: 0; }
+.callout a, .dark .callout a { color: var(--blomidon-deep); font-weight: 500; }
+.callout a:hover, .dark .callout a:hover { color: var(--red-earth); }
+
+.days { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.day { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 18px; background: #fffbe8; border: 2px solid var(--aubergine); border-radius: 14px; padding: 18px 20px; }
+.day .when { font: 400 1.05rem/1.1 var(--display); text-transform: uppercase; color: var(--ochre); }
+.day h3 { font: 600 1.3rem/1.2 var(--utility); letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 4px; color: var(--blomidon-deep); }
+.day .stay { font: 500 0.95rem/1.3 var(--utility); letter-spacing: 0.1em; text-transform: uppercase; color: var(--red-earth); margin: 0 0 6px; }
+.day p { margin: 0; }
+.day .drive { display: inline-block; margin-top: 8px; font: 600 0.88rem/1 var(--utility); letter-spacing: 0.12em; text-transform: uppercase; color: var(--sedge); }
+@media (max-width: 520px) { .day { grid-template-columns: 1fr; gap: 6px; } }
+
+.photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.photos figure { margin: 0; }
+.photos img { border-radius: 12px; border: 2px solid var(--aubergine); aspect-ratio: 3 / 2; object-fit: cover; width: 100%; }
+.photos figcaption { font: 500 0.95rem/1.3 var(--utility); letter-spacing: 0.08em; text-transform: uppercase; color: var(--mudflat); margin-top: 8px; }
+
 /* Footer */
 footer { background: var(--oxblood); color: var(--peach); padding: 32px 0; font-size: 0.92rem; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 28px; justify-content: space-between; align-items: center; }
