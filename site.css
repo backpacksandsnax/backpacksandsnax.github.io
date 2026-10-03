@@ -1,0 +1,144 @@
+/* Backpacks & Snax site styles. Blomidon palette (Brand/palettes/blomidon.md).
+   Fonts are self-hosted from /fonts so no visitor request ever goes to Google. */
+
+@font-face { font-family: "Archivo Black"; src: url("fonts/archivo-black-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("fonts/poppins-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("fonts/poppins-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("fonts/poppins-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("fonts/barlow-condensed-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("fonts/barlow-condensed-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
+:root {
+  --sky-lemon: #F1EAC0;
+  --peach: #DEB9A8;
+  --blush: #D9A596;
+  --lavender: #8F8794;
+  --aubergine: #2A2329;
+  --oxblood: #49292E;
+  --mudflat: #5B586C;
+  --red-earth: #7E4A3C;
+  --blomidon: #4F72A6;
+  --blomidon-deep: #34466A;
+  --sedge: #5F6450;
+  --ochre: #BC874E;
+
+  --display: "Archivo Black", "Arial Black", sans-serif;
+  --body: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --utility: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --wrap: 1080px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--sky-lemon);
+  color: var(--aubergine);
+  font: 400 1.0625rem/1.65 var(--body);
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--blomidon-deep); text-underline-offset: 3px; }
+a:hover { color: var(--red-earth); }
+:focus-visible { outline: 3px solid var(--blomidon); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--aubergine); color: var(--sky-lemon); padding: 8px 14px; border-radius: 6px; z-index: 10; }
+.skip:focus { left: 8px; }
+
+.eyebrow {
+  font: 600 0.95rem/1.2 var(--utility);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red-earth);
+  margin: 0 0 10px;
+}
+
+/* Top bar */
+.topbar { background: var(--aubergine); color: var(--sky-lemon); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--sky-lemon); text-decoration: none; font: 400 1rem/1 var(--display); text-transform: uppercase; letter-spacing: 0.02em; }
+.brand img { width: 36px; height: 36px; }
+.brand:hover { color: var(--peach); }
+.topbar nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.topbar nav a { color: var(--sky-lemon); text-decoration: none; font: 600 0.95rem/1 var(--utility); letter-spacing: 0.14em; text-transform: uppercase; }
+.topbar nav a:hover { color: var(--ochre); }
+
+/* Hero: the painting's sunset sky, top to bottom */
+.hero {
+  background: linear-gradient(180deg, var(--lavender) 0%, var(--peach) 48%, var(--sky-lemon) 100%);
+  padding: 56px 0 64px;
+  text-align: center;
+}
+.hero .badge { width: min(300px, 70vw); margin: 0 auto 26px; filter: drop-shadow(0 10px 24px rgba(42, 35, 41, 0.28)); }
+.hero h1 {
+  font: 400 clamp(2.2rem, 7vw, 4.2rem)/1.02 var(--display);
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  letter-spacing: 0.01em;
+}
+.hero .sub { font: 600 clamp(1rem, 2.6vw, 1.25rem)/1.3 var(--utility); letter-spacing: 0.22em; text-transform: uppercase; color: var(--oxblood); margin: 0 0 18px; }
+.hero .lead { max-width: 640px; margin: 0 auto 28px; font-size: 1.12rem; }
+
+.buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 999px;
+  font: 600 1rem/1 var(--utility);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--aubergine);
+}
+.btn-solid { background: var(--aubergine); color: var(--sky-lemon); }
+.btn-solid:hover { background: var(--oxblood); border-color: var(--oxblood); color: var(--sky-lemon); }
+.btn-line { color: var(--aubergine); }
+.btn-line:hover { background: var(--aubergine); color: var(--sky-lemon); }
+
+/* Sections */
+section { padding: 64px 0; }
+section h2 { font: 400 clamp(1.6rem, 4.4vw, 2.4rem)/1.1 var(--display); text-transform: uppercase; margin: 0 0 14px; }
+.intro { max-width: 680px; margin: 0 0 32px; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+.card { background: #fffbe8; border: 2px solid var(--aubergine); border-radius: 14px; padding: 22px 22px 20px; box-shadow: 5px 5px 0 var(--aubergine); }
+.card h3 { font: 600 1.25rem/1.2 var(--utility); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 8px; color: var(--blomidon-deep); }
+.card p { margin: 0; font-size: 0.98rem; }
+.card .num { font: 400 0.95rem/1 var(--display); color: var(--ochre); display: block; margin-bottom: 12px; }
+
+.dark { background: var(--aubergine); color: var(--sky-lemon); }
+.dark .eyebrow { color: var(--ochre); }
+.dark a { color: var(--peach); }
+.dark a:hover { color: var(--sky-lemon); }
+
+.next { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.next-item { border: 2px solid var(--mudflat); border-radius: 14px; padding: 24px; background: rgba(241, 234, 192, 0.04); }
+.next-item h3 { font: 400 1.35rem/1.15 var(--display); text-transform: uppercase; margin: 0 0 6px; }
+.next-item .domain { font: 600 1rem/1 var(--utility); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ochre); margin: 0 0 12px; }
+.next-item p { margin: 0; }
+.pill { display: inline-block; margin-top: 14px; padding: 5px 12px; border-radius: 999px; background: var(--oxblood); color: var(--peach); font: 600 0.85rem/1.2 var(--utility); letter-spacing: 0.14em; text-transform: uppercase; }
+
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.about img { border-radius: 14px; border: 2px solid var(--aubergine); box-shadow: 6px 6px 0 var(--aubergine); }
+@media (max-width: 760px) { .about { grid-template-columns: 1fr; gap: 26px; } }
+
+/* Prose pages (privacy, trail safety) */
+.prose { max-width: 720px; padding: 48px 20px 64px; margin: 0 auto; }
+.prose h1 { font: 400 clamp(1.8rem, 5vw, 2.6rem)/1.1 var(--display); text-transform: uppercase; margin: 0 0 8px; }
+.prose h2 { font: 600 1.35rem/1.2 var(--utility); letter-spacing: 0.1em; text-transform: uppercase; margin: 34px 0 8px; color: var(--blomidon-deep); }
+.prose .updated { font: 500 1rem/1.2 var(--utility); letter-spacing: 0.12em; text-transform: uppercase; color: var(--red-earth); margin: 0 0 24px; }
+.prose ul { padding-left: 22px; }
+.prose li { margin: 4px 0; }
+
+/* Coming-soon pages (.shop, .club) */
+.soon .hero { min-height: calc(100vh - 60px - 88px); display: flex; align-items: center; }
+.soon .hero .wrap { width: 100%; }
+h1, h2, h3 { overflow-wrap: break-word; }
+
+/* Footer */
+footer { background: var(--oxblood); color: var(--peach); padding: 32px 0; font-size: 0.92rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 28px; justify-content: space-between; align-items: center; }
+footer a { color: var(--sky-lemon); }
+footer a:hover { color: var(--ochre); }
+footer nav { display: flex; gap: 18px; flex-wrap: wrap; }
+footer p { margin: 0; }
